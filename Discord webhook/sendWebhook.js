@@ -2,7 +2,7 @@ let tokens = require("../tokens.json");
 let color;
 let status;
 async function sendWebhook(month, document) {
-  let powercuts = Math.floor(document.powerloss / 2);
+  let powercuts = Math.ceil(document.powerloss / 2);
   if (powercuts <= 30) {
     color = 3066993;
     status = "Good";
