@@ -27,7 +27,7 @@ async function writeTimestamp() {
       );
     }
   } catch (e) {
-    console.log("An error occurred: ", e.message);
+    console.log("An error occurred: ", e);
   }
 }
 setInterval(writeTimestamp, 10000);
