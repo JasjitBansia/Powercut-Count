@@ -35,7 +35,7 @@ async function sendWebhook(month, document) {
           )}**\nStatus: **${status}**`,
           color: color,
           thumbnail: {
-            url: "https://i.ytimg.com/vi/_2LpCdhuOyQ/hqdefault.jpg?sqp=-oaymwEmCOADEOgC8quKqQMa8AEB-AH-BIAC4AOKAgwIABABGEkgXChlMA8=&rs=AOn4CLBuGlXMcQ9ZVCqfGSCjwdfPIbN_lQ",
+            url: "https://i.ytimg.com/vi/_2LpCdhuOyQ/hqdefault.jpg",
           },
         },
       ],
