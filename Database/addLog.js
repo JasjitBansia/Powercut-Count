@@ -1,6 +1,6 @@
 const { db } = require("./initializeDB.js");
-async function addLog(month, date) {
-  let collection = db.collection(`powercuts-${month}`);
+async function addLog(monthAndYear, date) {
+  let collection = db.collection(`powercuts-${monthAndYear}`);
   let collectionArray = await collection.find({}).toArray();
   if (collectionArray.length === 0) {
     await collection.insertOne({

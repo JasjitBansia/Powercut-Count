@@ -17,12 +17,15 @@ async function writeTimestamp() {
   try {
     await fs.writeFile("./log.txt", currentTimestamp);
     if ((currentTimestamp - lastTimestamp) / 1000 > 25) {
-      let month = new Date(Number.parseInt(currentTimestamp))
-        .toLocaleDateString("en-in", { month: "long" })
-        .toLowerCase();
+      let monthAndYear =
+        new Date(Number.parseInt(currentTimestamp))
+          .toLocaleDateString("en-in", { month: "long" })
+          .toLowerCase() +
+        "-" +
+        new Date().getFullYear().toString();
       const { addLog } = require("./Database/addLog.js");
       await addLog(
-        month,
+        monthAndYear,
         new Date(Number.parseInt(currentTimestamp)).toLocaleString("en-IN")
       );
     }
