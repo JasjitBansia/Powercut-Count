@@ -6,7 +6,9 @@ let monthAndYear =
   new Date().getFullYear().toString();
 let month = new Date().toLocaleDateString("en-in", { month: "long" });
 async function dateCheck() {
-  const document = await db.collection(monthAndYear.toLowerCase()).findOne({});
+  const document = await db
+    .collection("powercuts-" + monthAndYear.toLowerCase())
+    .findOne({});
   let loggedDate = document.sentOn;
   let tomorrowDate = new Date(Date.now() + 24 * 60 * 60 * 1000).getDate();
   if (tomorrowDate === 1 && new Date().toDateString() !== loggedDate) {
