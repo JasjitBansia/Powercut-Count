@@ -16,7 +16,7 @@ async function writeTimestamp() {
   let currentTimestamp = Date.now().toString();
   try {
     await fs.writeFile("./log.txt", currentTimestamp);
-    if ((currentTimestamp - lastTimestamp) / 1000 > 90) {
+    if ((currentTimestamp - lastTimestamp) / 1000 > 60) {
       let monthAndYear =
         new Date(Number.parseInt(currentTimestamp))
           .toLocaleDateString("en-in", { month: "long" })
